@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Debería Desplegar Hoy?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            font-size: 48px;
+            color: #ff4500;
+        }
+        p {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Debería Desplegar Hoy?</h1>
+    <p id="response">Cargando respuesta...</p>
+    <script>
+        const phrases = [
+            "¡Hágale pues, hoy es el día!",
+            "Mejor no, espere un mejor momento.",
+            "¡Claro que sí, con toda la energía!",
+            "Hoy no es el mejor día, respire y evalúe.",
+            "¡Láncese! Nada lo detiene hoy."
+        ];
+
+        document.getElementById("response").innerText =
+            phrases[Math.floor(Math.random() * phrases.length)];
+    </script>
+</body>
+</html>
