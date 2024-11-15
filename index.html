@@ -53,12 +53,18 @@
     <h1>¿Será que le meto mano hoy?</h1>
     <p id="response">Cargando respuesta...</p>
     <div class="footer">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         Inspirado por <a href="https://shouldideploy.today" target="_blank">shouldideploy.today</a>
+        <br>
         Idea: Carlos Ocampo
+        <br>
         Desarrollo: Elkin Cordoba
     </div>
     <script>
-        // Frases típicas colombianas desincentivadoras
         const phrases = [
             "Eso está quietico, déjelo así.",
             "¿Pa' qué va a inventar?",
@@ -94,22 +100,19 @@
             "Yo nací de noche pero no anoche"
         ];
 
-        // Función para cambiar la frase
         const responseElement = document.getElementById("response");
         function changePhrase() {
             const randomIndex = Math.floor(Math.random() * phrases.length);
             responseElement.textContent = phrases[randomIndex];
         }
 
-        // Cambiar frase al presionar la barra espaciadora
         document.addEventListener("keydown", function(event) {
-            if (event.code === "Space") { // Detecta la barra espaciadora
-                event.preventDefault(); // Previene el scroll involuntario
+            if (event.code === "Space") {
+                event.preventDefault();
                 changePhrase();
             }
         });
 
-        // Cambiar frase al cargar la página
         changePhrase();
     </script>
 </body>
