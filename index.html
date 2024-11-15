@@ -3,38 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿Debería Desplegar Hoy?</title>
+    <title>¿Será que le meto mano hoy?</title>
     <style>
+        /* Estilo general */
         body {
-            font-family: Arial, sans-serif;
+            background-color: #1a1a2e;
+            color: #e94560;
+            font-family: "Roboto", Arial, sans-serif;
             text-align: center;
-            padding: 50px;
-            background-color: #f4f4f9;
-            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
+
         h1 {
-            font-size: 48px;
-            color: #ff4500;
+            font-size: 3rem;
+            margin: 0;
+            color: #e94560;
         }
+
         p {
-            font-size: 24px;
+            font-size: 2rem;
+            color: #ffffff;
+            padding: 0 20px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.9rem;
+            color: #dddddd;
+        }
+
+        .footer a {
+            color: #e94560;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <h1>¿Debería Desplegar Hoy?</h1>
+    <h1>¿Será que le meto mano hoy?</h1>
     <p id="response">Cargando respuesta...</p>
+    <div class="footer">
+        <p>Inspirado por <a href="https://shouldideploy.today" target="_blank">shouldideploy.today</a></p>
+    </div>
     <script>
+        // Frases típicas colombianas desincentivadoras
         const phrases = [
-            "¡Hágale pues, hoy es el día!",
-            "Mejor no, espere un mejor momento.",
-            "¡Claro que sí, con toda la energía!",
-            "Hoy no es el mejor día, respire y evalúe.",
-            "¡Láncese! Nada lo detiene hoy."
+            "Eso está quietico, déjelo así.",
+            "¡Ay, ome! ¿Pa' qué va a inventar?",
+            "No sea necio, lo que no está roto no se arregla.",
+            "Mijo, usted no se meta en camisa de once varas.",
+            "Deje la gana de joder y váyase a tomar tinto.",
+            "No le eche sal a la herida, compadre.",
+            "¿Usted quiere que esto se caiga? Déjelo quieto.",
+            "¡Ojo! No vaya a hacer el oso.",
+            "Primero revise con lupa, no sea cansón.",
+            "Eso está mejor que caldo de gallina, no lo toque.",
+            "No sea liso, mijito, mejor revise mañana.",
+            "Si le mete mano, toca decirle a todos. ¡Cuidado!",
+            "¿Va a meter la pata? Mejor no, parcero.",
+            "No sea llevado del verraco, espere un día más.",
+            "Deje así, no se busque problemas, hermano.",
+            "¿Qué va a ganar? Solo dolores de cabeza.",
+            "¿Pa' qué va a armar el chicharrón? Déjelo quieto.",
+            "¡Uy no! Va a terminar con el cuero al sol.",
+            "Primero coma y luego piense, mejor no despliegue.",
+            "Compadre, eso huele a problema, mejor no.",
+            "No invente, todo anda chévere, ¿pa' qué moverlo?",
+            "Cálmese y póngase a mirar Netflix mejor.",
+            "Eso está más quieto que carro varado, ¡déjelo así!",
+            "Se le va a caer el rancho, mejor espere.",
+            "No le eche más leña al fuego, amigo.",
+            "¿Usted cree que es buen día? ¡No lo es!",
+            "Eso se va a enredar como piña, no lo toque.",
+            "Mejor ahórrese el regaño y váyase a dormir.",
+            "Oiga, eso está como está, deje de molestar.",
+            "Déjelo pa' mañana, ¡hoy no es el día!"
         ];
 
-        document.getElementById("response").innerText =
-            phrases[Math.floor(Math.random() * phrases.length)];
+        // Función para cambiar la frase
+        const responseElement = document.getElementById("response");
+        function changePhrase() {
+            const randomIndex = Math.floor(Math.random() * phrases.length);
+            responseElement.textContent = phrases[randomIndex];
+        }
+
+        // Cambiar frase al cargar la página
+        changePhrase();
+
+        // Cambiar frase al presionar "Enter"
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                changePhrase();
+            }
+        });
     </script>
 </body>
 </html>
