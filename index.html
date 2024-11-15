@@ -18,7 +18,6 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            cursor: pointer; /* Indica que se puede hacer clic */
         }
 
         h1 {
@@ -98,20 +97,16 @@
             responseElement.textContent = phrases[randomIndex];
         }
 
-        // Cambiar frase al cargar la página
-        changePhrase();
-
-        // Cambiar frase al presionar "Enter"
+        // Cambiar frase al presionar la barra espaciadora
         document.addEventListener("keydown", function(event) {
-            if (event.key === "Enter") {
+            if (event.code === "Space") { // Detecta la barra espaciadora
+                event.preventDefault(); // Previene el scroll involuntario
                 changePhrase();
             }
         });
 
-        // Cambiar frase al hacer clic en cualquier lugar
-        document.addEventListener("click", function() {
-            changePhrase();
-        });
+        // Cambiar frase al cargar la página
+        changePhrase();
     </script>
 </body>
 </html>
