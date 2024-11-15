@@ -60,7 +60,7 @@
 <body>
     <h1>¿Será que le meto mano hoy?</h1>
     <h5 id="response">Cargando respuesta...</h5>
-    Hit <span className="space-btn">Space</span> or Click
+    Presione la barra espaciadora o De Click
     <div class="footer">
         <br>
         <br>
@@ -128,6 +128,8 @@
             responseElement.textContent = phrases[randomIndex];
         }
 
+        changePhrase();
+        
         document.addEventListener("keydown", function(event) {
             if (event.code === "Space") {
                 event.preventDefault();
@@ -135,7 +137,9 @@
             }
         });
 
-        changePhrase();
+        document.addEventListener("click", function() {
+            changePhrase();
+        });
     </script>
 </body>
 </html>
